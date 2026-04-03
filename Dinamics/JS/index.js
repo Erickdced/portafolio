@@ -13,9 +13,10 @@ const translations = {
 		navSkills: "Skills",
 		navProjects: "Projects",
 		navContact: "Contact",
-		langLabel: "Lang:",
+		langLabel: "Language:",
 		themeText: "Dark Mode",
-		heroSubtitle: "Electronic Engineer Student | Full Stack Developer | Embedded Systems",
+		heroQuote: "I don't wait to be taught — I build.",
+		heroSubtitle: "Engineering student by day. Self-taught builder since age 12. Full stack, embedded systems, and cybersecurity — from Mexico City.",
 		skillsLanguages: "Languages",
 		skillsEmbedded: "Embedded",
 		skillsInfrastructure: "Infrastructure",
@@ -23,6 +24,25 @@ const translations = {
 		certificationsTitle: "Official Certifications",
 		certificationsText: "Official documents direct download links",
 		certificationsBtn: "View Certifications",
+		project1ImageText: "Project 1 image",
+		project1Title: "Swords and Laser",
+		project1Tag1: "Procedural C",
+		project1Tag2: "Allegro 4",
+		project1Tag3: "Pixel Collision",
+		project1Tag4: "Double Buffering",
+		project1Description: "A fully playable RPG built from scratch — no engine, no framework, just C and raw logic.",
+		project2ImageText: "Project 2 image",
+		project2Title: "Project 2",
+		project2Description: "Description of project 2.",
+		project3ImageText: "Project 3 image",
+		project3Title: "Project 3",
+		project3Description: "Description of project 3.",
+		project4ImageText: "Project 4 image",
+		project4Title: "Project 4",
+		project4Description: "Description of project 4.",
+		project5ImageText: "Project 5 image",
+		project5Title: "Project 5",
+		project5Description: "Description of project 5.",
 		contactMail: "mail",
 		contactLinkedin: "linkedin",
 		contactGithub: "github"
@@ -35,7 +55,8 @@ const translations = {
 		navContact: "Contacto",
 		langLabel: "Idioma:",
 		themeText: "Modo oscuro",
-		heroSubtitle: "Estudiante de Ingeniería Electrónica | Desarrollador Full Stack | Sistemas Embebidos",
+		heroQuote: "No espero a que me enseñen — construyo.",
+		heroSubtitle: "Estudiante de ingeniería de día. Constructor autodidacta desde los 12 años. Full stack, sistemas embebidos y ciberseguridad — desde Ciudad de México.",
 		skillsLanguages: "Lenguajes",
 		skillsEmbedded: "Embebidos",
 		skillsInfrastructure: "Infraestructura",
@@ -43,6 +64,25 @@ const translations = {
 		certificationsTitle: "Constancias oficiales",
 		certificationsText: "Enlaces directos de descarga de documentos oficiales",
 		certificationsBtn: "Ver constancias",
+		project1ImageText: "Imagen del proyecto 1",
+		project1Title: "Swords and Laser",
+		project1Tag1: "C procedimental",
+		project1Tag2: "Allegro 4",
+		project1Tag3: "Colisión por píxel",
+		project1Tag4: "Doble búfer",
+		project1Description: "Un RPG totalmente jugable construido desde cero: sin motor, sin framework, solo C y lógica pura.",
+		project2ImageText: "Imagen del proyecto 2",
+		project2Title: "Proyecto 2",
+		project2Description: "Descripción del proyecto 2.",
+		project3ImageText: "Imagen del proyecto 3",
+		project3Title: "Proyecto 3",
+		project3Description: "Descripción del proyecto 3.",
+		project4ImageText: "Imagen del proyecto 4",
+		project4Title: "Proyecto 4",
+		project4Description: "Descripción del proyecto 4.",
+		project5ImageText: "Imagen del proyecto 5",
+		project5Title: "Proyecto 5",
+		project5Description: "Descripción del proyecto 5.",
 		contactMail: "correo",
 		contactLinkedin: "linkedin",
 		contactGithub: "github"
@@ -99,7 +139,8 @@ const elements = {
 	prjBtn: document.getElementById("prjBtn"),
 	cntBtn: document.getElementById("cntBtn"),
 	heroName: document.querySelector("#hero .heroText h1"),
-	heroSubtitle: document.querySelector("#hero .heroText p"),
+	heroQuote: document.getElementById("heroQuote"),
+	heroSubtitle: document.getElementById("heroSubtitle"),
 	languagesTitle: document.querySelector("#languages h2"),
 	languagesList: document.querySelector("#languages ul"),
 	embeddedTitle: document.querySelector("#embedded h2"),
@@ -108,6 +149,25 @@ const elements = {
 	infrastructureList: document.querySelector("#infrastructure ul"),
 	toolingTitle: document.querySelector("#tooling h2"),
 	toolingList: document.querySelector("#tooling ul"),
+	project1ImageText: document.getElementById("project1ImageText"),
+	project1Title: document.getElementById("project1Title"),
+	project1Tag1: document.getElementById("project1Tag1"),
+	project1Tag2: document.getElementById("project1Tag2"),
+	project1Tag3: document.getElementById("project1Tag3"),
+	project1Tag4: document.getElementById("project1Tag4"),
+	project1Description: document.getElementById("project1Description"),
+	project2ImageText: document.getElementById("project2ImageText"),
+	project2Title: document.getElementById("project2Title"),
+	project2Description: document.getElementById("project2Description"),
+	project3ImageText: document.getElementById("project3ImageText"),
+	project3Title: document.getElementById("project3Title"),
+	project3Description: document.getElementById("project3Description"),
+	project4ImageText: document.getElementById("project4ImageText"),
+	project4Title: document.getElementById("project4Title"),
+	project4Description: document.getElementById("project4Description"),
+	project5ImageText: document.getElementById("project5ImageText"),
+	project5Title: document.getElementById("project5Title"),
+	project5Description: document.getElementById("project5Description"),
 	certificationsTitle: document.querySelector("#certifications h2"),
 	certificationsText: document.querySelector("#certifications div"),
 	certificationsBtn: document.getElementById("certs"),
@@ -301,7 +361,27 @@ function setLanguage(lang, options = {})
 
 	elements.langLabel.textContent = copy.langLabel;
 	elements.themeText.textContent = copy.themeText;
+	elements.heroQuote.textContent = copy.heroQuote;
 	elements.heroSubtitle.textContent = copy.heroSubtitle;
+	elements.project1ImageText.textContent = copy.project1ImageText;
+	elements.project1Title.textContent = copy.project1Title;
+	elements.project1Tag1.textContent = copy.project1Tag1;
+	elements.project1Tag2.textContent = copy.project1Tag2;
+	elements.project1Tag3.textContent = copy.project1Tag3;
+	elements.project1Tag4.textContent = copy.project1Tag4;
+	elements.project1Description.textContent = copy.project1Description;
+	elements.project2ImageText.textContent = copy.project2ImageText;
+	elements.project2Title.textContent = copy.project2Title;
+	elements.project2Description.textContent = copy.project2Description;
+	elements.project3ImageText.textContent = copy.project3ImageText;
+	elements.project3Title.textContent = copy.project3Title;
+	elements.project3Description.textContent = copy.project3Description;
+	elements.project4ImageText.textContent = copy.project4ImageText;
+	elements.project4Title.textContent = copy.project4Title;
+	elements.project4Description.textContent = copy.project4Description;
+	elements.project5ImageText.textContent = copy.project5ImageText;
+	elements.project5Title.textContent = copy.project5Title;
+	elements.project5Description.textContent = copy.project5Description;
 
 	elements.certificationsTitle.textContent = copy.certificationsTitle;
 	elements.certificationsText.textContent = copy.certificationsText;
