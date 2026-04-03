@@ -257,7 +257,16 @@ main
 {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
+    gap: 1.2rem;
+}
+
+.heroMedia
+{
+    flex-shrink: 0;
+    padding: 0.28rem;
+    border-radius: 999px;
+    background: linear-gradient(145deg, rgba(var(--accent-rgb), 0.24), rgba(var(--accent-rgb), 0.06));
 }
 
 .profilePhoto
@@ -266,14 +275,55 @@ main
     height: 7rem;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid var(--border);
+    border: 2px solid rgba(var(--accent-rgb), 0.7);
     flex-shrink: 0;
+    display: block;
+    background-color: #202020;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.35);
 }
 
 .heroText
 {
     display: grid;
     gap: 0.35rem;
+    flex: 1;
+}
+
+.heroActions
+{
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.heroActionBtn
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 0.65rem;
+    padding: 0.62rem 1rem;
+    text-decoration: none;
+    color: var(--text-main);
+    background: linear-gradient(145deg, rgba(var(--accent-rgb), 0.22), rgba(var(--accent-rgb), 0.1));
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.heroActionBtn:hover
+{
+    border-color: var(--accent-soft);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+body[data-theme="light"] .heroActionBtn
+{
+    background: linear-gradient(145deg, rgba(var(--accent-rgb), 0.18), rgba(var(--accent-rgb), 0.08));
 }
 
 #skills
@@ -475,5 +525,15 @@ body[data-theme="light"] .toggleSwitch input:checked + .slider
     {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .heroActions
+    {
+        width: 100%;
+    }
+
+    .heroActionBtn
+    {
+        width: 100%;
     }
 }

@@ -17,6 +17,7 @@ const translations = {
 		themeText: "Dark Mode",
 		heroQuote: "I don't wait to be taught — I build.",
 		heroSubtitle: "Engineering student by day. Self-taught builder since age 12. Full stack, embedded systems, and cybersecurity — from Mexico City.",
+		cvDownloadBtn: "Download CV (PDF)",
 		skillsLanguages: "Languages",
 		skillsEmbedded: "Embedded",
 		skillsInfrastructure: "Infrastructure",
@@ -80,6 +81,7 @@ const translations = {
 		themeText: "Modo oscuro",
 		heroQuote: "No espero a que me enseñen — construyo.",
 		heroSubtitle: "Estudiante de ingeniería de día. Constructor autodidacta desde los 12 años. Full stack, sistemas embebidos y ciberseguridad — desde Ciudad de México.",
+		cvDownloadBtn: "Descargar CV (PDF)",
 		skillsLanguages: "Lenguajes",
 		skillsEmbedded: "Embebidos",
 		skillsInfrastructure: "Infraestructura",
@@ -187,6 +189,7 @@ const elements = {
 	heroName: document.querySelector("#hero .heroText h1"),
 	heroQuote: document.getElementById("heroQuote"),
 	heroSubtitle: document.getElementById("heroSubtitle"),
+	cvDownloadBtn: document.getElementById("cvDownloadBtn"),
 	languagesTitle: document.querySelector("#languages h2"),
 	languagesList: document.querySelector("#languages ul"),
 	embeddedTitle: document.querySelector("#embedded h2"),
@@ -432,6 +435,7 @@ function setLanguage(lang, options = {})
 	elements.themeText.textContent = copy.themeText;
 	elements.heroQuote.textContent = copy.heroQuote;
 	elements.heroSubtitle.textContent = copy.heroSubtitle;
+	elements.cvDownloadBtn.textContent = copy.cvDownloadBtn;
 	elements.project1ImageText.textContent = copy.project1ImageText;
 	elements.project1Title.textContent = copy.project1Title;
 	elements.project1Tag1.textContent = copy.project1Tag1;
