@@ -32,17 +32,40 @@ const translations = {
 		project1Tag4: "Double Buffering",
 		project1Description: "A fully playable RPG built from scratch — no engine, no framework, just C and raw logic.",
 		project2ImageText: "Project 2 image",
-		project2Title: "Project 2",
-		project2Description: "Description of project 2.",
+		project2Title: "Interprepas — Mobile Bridge Control System",
+		project2Tag1: "🥇 1st Place",
+		project2Tag2: "DC motors",
+		project2Tag3: "Servo",
+		project2Tag4: "Distance sensor",
+		project2Tag5: "NeoPixel LEDs",
+		project2Tag6: "Pygame GUI",
+		project2Tag7: "PWM control",
+		project2Description: "A physically built, laser-cut drawbridge controlled by a Raspberry Pi 5 — winner of the Interprepas competition.",
 		project3ImageText: "Project 3 image",
-		project3Title: "Project 3",
-		project3Description: "Description of project 3.",
+		project3Title: "JavaScript Course — ENP 6",
+		project3Tag1: "JavaScript",
+		project3Tag2: "HTML",
+		project3Tag3: "CSS",
+		project3Tag4: "Curriculum Design",
+		project3Tag5: "Team Mentoring",
+		project3Description: "Designed and taught a full web development course from scratch. 43 students, 9 teams, one month — all shipped a working project.",
 		project4ImageText: "Project 4 image",
-		project4Title: "Project 4",
-		project4Description: "Description of project 4.",
+		project4Title: "Cybersecurity Audit — Legal Firm",
+		project4Tag1: "ISO 27001",
+		project4Tag2: "Risk Assessment",
+		project4Tag3: "Security Policies",
+		project4Tag4: "Vulnerability Analysis",
+		project4Tag5: "Technical Report",
+		project4Description: "Solo audit of a legal firm's information security infrastructure. 7 findings, 7 new policies, full ISO 27001 compliance report — delivered alone at 17.",
 		project5ImageText: "Project 5 image",
-		project5Title: "Project 5",
-		project5Description: "Description of project 5.",
+		project5Title: "Administrative Web System — [REDACTED]",
+		project5Tag1: "PHP",
+		project5Tag2: "MySQL",
+		project5Tag3: "Apache",
+		project5Tag4: "Linux",
+		project5Tag5: "Deployed",
+		project5Tag6: "Active Users",
+		project5Description: "A full production web system, actively used by real staff. Client and details are confidential — but it ships, it runs, and it works.",
 		contactMail: "mail",
 		contactLinkedin: "linkedin",
 		contactGithub: "github"
@@ -72,17 +95,40 @@ const translations = {
 		project1Tag4: "Doble búfer",
 		project1Description: "Un RPG totalmente jugable construido desde cero: sin motor, sin framework, solo C y lógica pura.",
 		project2ImageText: "Imagen del proyecto 2",
-		project2Title: "Proyecto 2",
-		project2Description: "Descripción del proyecto 2.",
+		project2Title: "Interprepas — Sistema de control de puente móvil",
+		project2Tag1: "🥇 1er lugar",
+		project2Tag2: "Motores DC",
+		project2Tag3: "Servo",
+		project2Tag4: "Sensor de distancia",
+		project2Tag5: "LEDs NeoPixel",
+		project2Tag6: "Interfaz Pygame",
+		project2Tag7: "Control PWM",
+		project2Description: "Un puente levadizo físico, cortado en láser y controlado por una Raspberry Pi 5: ganador del concurso Interprepas.",
 		project3ImageText: "Imagen del proyecto 3",
-		project3Title: "Proyecto 3",
-		project3Description: "Descripción del proyecto 3.",
+		project3Title: "Curso de JavaScript — ENP 6",
+		project3Tag1: "JavaScript",
+		project3Tag2: "HTML",
+		project3Tag3: "CSS",
+		project3Tag4: "Diseño curricular",
+		project3Tag5: "Mentoría de equipos",
+		project3Description: "Diseñé e impartí un curso completo de desarrollo web desde cero. 43 estudiantes, 9 equipos y un mes: todos entregaron un proyecto funcional.",
 		project4ImageText: "Imagen del proyecto 4",
-		project4Title: "Proyecto 4",
-		project4Description: "Descripción del proyecto 4.",
+		project4Title: "Auditoría de ciberseguridad — firma legal",
+		project4Tag1: "ISO 27001",
+		project4Tag2: "Evaluación de riesgos",
+		project4Tag3: "Políticas de seguridad",
+		project4Tag4: "Análisis de vulnerabilidades",
+		project4Tag5: "Reporte técnico",
+		project4Description: "Auditoría individual de la infraestructura de seguridad de la información de una firma legal. 7 hallazgos, 7 políticas nuevas y reporte completo de cumplimiento ISO 27001 — entregado en solitario a los 17.",
 		project5ImageText: "Imagen del proyecto 5",
-		project5Title: "Proyecto 5",
-		project5Description: "Descripción del proyecto 5.",
+		project5Title: "Sistema web administrativo — [CONFIDENCIAL]",
+		project5Tag1: "PHP",
+		project5Tag2: "MySQL",
+		project5Tag3: "Apache",
+		project5Tag4: "Linux",
+		project5Tag5: "Desplegado",
+		project5Tag6: "Usuarios activos",
+		project5Description: "Un sistema web de producción completo, usado activamente por personal real. El cliente y los detalles son confidenciales, pero está desplegado, funciona y cumple.",
 		contactMail: "correo",
 		contactLinkedin: "linkedin",
 		contactGithub: "github"
@@ -158,15 +204,38 @@ const elements = {
 	project1Description: document.getElementById("project1Description"),
 	project2ImageText: document.getElementById("project2ImageText"),
 	project2Title: document.getElementById("project2Title"),
+	project2Tag1: document.getElementById("project2Tag1"),
+	project2Tag2: document.getElementById("project2Tag2"),
+	project2Tag3: document.getElementById("project2Tag3"),
+	project2Tag4: document.getElementById("project2Tag4"),
+	project2Tag5: document.getElementById("project2Tag5"),
+	project2Tag6: document.getElementById("project2Tag6"),
+	project2Tag7: document.getElementById("project2Tag7"),
 	project2Description: document.getElementById("project2Description"),
 	project3ImageText: document.getElementById("project3ImageText"),
 	project3Title: document.getElementById("project3Title"),
+	project3Tag1: document.getElementById("project3Tag1"),
+	project3Tag2: document.getElementById("project3Tag2"),
+	project3Tag3: document.getElementById("project3Tag3"),
+	project3Tag4: document.getElementById("project3Tag4"),
+	project3Tag5: document.getElementById("project3Tag5"),
 	project3Description: document.getElementById("project3Description"),
 	project4ImageText: document.getElementById("project4ImageText"),
 	project4Title: document.getElementById("project4Title"),
+	project4Tag1: document.getElementById("project4Tag1"),
+	project4Tag2: document.getElementById("project4Tag2"),
+	project4Tag3: document.getElementById("project4Tag3"),
+	project4Tag4: document.getElementById("project4Tag4"),
+	project4Tag5: document.getElementById("project4Tag5"),
 	project4Description: document.getElementById("project4Description"),
 	project5ImageText: document.getElementById("project5ImageText"),
 	project5Title: document.getElementById("project5Title"),
+	project5Tag1: document.getElementById("project5Tag1"),
+	project5Tag2: document.getElementById("project5Tag2"),
+	project5Tag3: document.getElementById("project5Tag3"),
+	project5Tag4: document.getElementById("project5Tag4"),
+	project5Tag5: document.getElementById("project5Tag5"),
+	project5Tag6: document.getElementById("project5Tag6"),
 	project5Description: document.getElementById("project5Description"),
 	certificationsTitle: document.querySelector("#certifications h2"),
 	certificationsText: document.querySelector("#certifications div"),
@@ -372,15 +441,38 @@ function setLanguage(lang, options = {})
 	elements.project1Description.textContent = copy.project1Description;
 	elements.project2ImageText.textContent = copy.project2ImageText;
 	elements.project2Title.textContent = copy.project2Title;
+	elements.project2Tag1.textContent = copy.project2Tag1;
+	elements.project2Tag2.textContent = copy.project2Tag2;
+	elements.project2Tag3.textContent = copy.project2Tag3;
+	elements.project2Tag4.textContent = copy.project2Tag4;
+	elements.project2Tag5.textContent = copy.project2Tag5;
+	elements.project2Tag6.textContent = copy.project2Tag6;
+	elements.project2Tag7.textContent = copy.project2Tag7;
 	elements.project2Description.textContent = copy.project2Description;
 	elements.project3ImageText.textContent = copy.project3ImageText;
 	elements.project3Title.textContent = copy.project3Title;
+	elements.project3Tag1.textContent = copy.project3Tag1;
+	elements.project3Tag2.textContent = copy.project3Tag2;
+	elements.project3Tag3.textContent = copy.project3Tag3;
+	elements.project3Tag4.textContent = copy.project3Tag4;
+	elements.project3Tag5.textContent = copy.project3Tag5;
 	elements.project3Description.textContent = copy.project3Description;
 	elements.project4ImageText.textContent = copy.project4ImageText;
 	elements.project4Title.textContent = copy.project4Title;
+	elements.project4Tag1.textContent = copy.project4Tag1;
+	elements.project4Tag2.textContent = copy.project4Tag2;
+	elements.project4Tag3.textContent = copy.project4Tag3;
+	elements.project4Tag4.textContent = copy.project4Tag4;
+	elements.project4Tag5.textContent = copy.project4Tag5;
 	elements.project4Description.textContent = copy.project4Description;
 	elements.project5ImageText.textContent = copy.project5ImageText;
 	elements.project5Title.textContent = copy.project5Title;
+	elements.project5Tag1.textContent = copy.project5Tag1;
+	elements.project5Tag2.textContent = copy.project5Tag2;
+	elements.project5Tag3.textContent = copy.project5Tag3;
+	elements.project5Tag4.textContent = copy.project5Tag4;
+	elements.project5Tag5.textContent = copy.project5Tag5;
+	elements.project5Tag6.textContent = copy.project5Tag6;
 	elements.project5Description.textContent = copy.project5Description;
 
 	elements.certificationsTitle.textContent = copy.certificationsTitle;
