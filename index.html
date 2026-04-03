@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="Statics/CSS/Index.css" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Portfolio</title>
+        <meta name="description" content="Personal portfolio website" />
+    </head>
+    <body>
+        <nav>
+            <div id="name">Erick Cedillo</div> 
+            
+            <div id="buttons">
+                <a id="abtBtn" class="navLink" href="#hero">About</a>
+                <a id="sklsBtn" class="navLink" href="#skills">Skills</a>
+                <a id="prjBtn" class="navLink" href="#projects">Projects</a>
+                <a id="cntBtn" class="navLink" href="#Contact">Contact</a>
+
+                <div>
+                    <span id="langLabel">Language:</span>
+                        <button id="enBtn">EN</button>
+                        <button id="esBtn">ES</button>
+                </div>
+
+                <div id="themeLabel">
+                    <span id="themeText">Dark Mode</span>
+                    <label class="toggleSwitch" for="themeToggle">
+                        <input type="checkbox" id="themeToggle" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <section id="hero">
+                <div class="heroProfile">
+                    <img class="profilePhoto" src="Statics/Images/Profile.jpg" alt="Profile Picture" />
+                    <div class="heroText">
+                        <h1>Erick Cedillo</h1>
+                        <p>Electronic Engineer Student | Full Stack Developer | Embedded Systems</p>
+                    </div>
+                </div>
+            </section>
+            <section id="skills">
+                <div id="languages" class="skillBlock">
+                    <h2>Languages [loading ...] </h2>
+                    <ul>
+                        <li>Python</li>
+                            <li>JavaScript</li>
+                        <li>Java</li>
+                        <li>C/C++</li>
+                        <li>PHP</li>
+                        <li>VB</li>
+                        <li>Bash</li>
+                    </ul>
+                </div>
+                <div id="embedded" class="skillBlock">
+                    <h2>Embedded [loading ...] </h2>
+                    <ul>
+                        <li>PWM & motor control</li>
+                        <li>Sensor interfacing (digital / ADC)</li>
+                        <li>Communication protocols (I2C, UART, SPI)</li>
+                        <li>WiFi / Bluetooth (ESP32)</li>
+                        <li>GPIO control & signal handling</li>
+                        <li>Real-time logic (state machines / timing)</li>
+                    </ul>
+                </div>
+                <div id="infrastructure" class="skillBlock">
+                    <h2>Infrastructure [loading ...] </h2>
+                    <ul>
+                        <li>Linux (daily use, system management)</li>
+                        <li>Windows</li>
+                        <li>Networking (LAN setup, diagnostics)</li>
+                        <li>Remote access (SSH, remote desktop)</li>
+                    </ul>
+                </div>
+                <div id="tooling" class="skillBlock">
+                    <h2>Tooling [loading ...] </h2>
+                    <ul>
+                        <li>Git</li>
+                        <li>Visual Studio Code</li>
+                        <li>Autodesk Inventor</li>
+                        <li>FreeCAD</li>
+                        <li>Figma</li>
+                        <li>Nmap</li>
+                    </ul>
+                </div>
+            </section>
+            <section id="projects">
+                <div class="row">
+                    <div id="project1" class="project">
+                        <div class="projectImagePlaceholder">Project 1 image</div>
+                        <h3>Project 1</h3>
+                        <p>Description of project 1.</p>
+                    </div>
+                    <div id="project2" class="project">
+                        <div class="projectImagePlaceholder">Project 2 image</div>
+                        <h3>Project 2</h3>
+                        <p>Description of project 2.</p>
+                    </div>
+                    <div id="project3" class="project">
+                        <div class="projectImagePlaceholder">Project 3 image</div>
+                        <h3>Project 3</h3>
+                        <p>Description of project 3.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="project4" class="project">
+                        <div class="projectImagePlaceholder">Project 4 image</div>
+                        <h3>Project 4</h3>
+                        <p>Description of project 4.</p>
+                    </div>
+                    <div id="project5" class="project">
+                        <div class="projectImagePlaceholder">Project 5 image</div>
+                        <h3>Project 5</h3>
+                        <p>Description of project 5.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="certifications">
+                <h2>official certifications</h2>
+                <div>official documents direct download links</div>
+                <button id="certs">View Certifications</button>
+            </section>
+            <section id="Contact">
+                <div><button id="mail">svg</button>mail</div>
+                <div><button id="linkedin">svg</button>linkedin</div>
+                <div><button id="github">svg</button>github</div>
+            </section>
+        </main>
+        <script src="Dinamics/JS/Index.js"></script>
+    </body>
+</html>
