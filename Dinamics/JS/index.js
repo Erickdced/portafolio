@@ -1,6 +1,34 @@
 const THEME_KEY = "portfolio-theme";
 const LANG_KEY = "portfolio-lang";
 
+function setCookie(name, value, days = 365)
+{
+	const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
+	document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`;
+}
+
+function getCookie(name)
+{
+	const prefix = `${name}=`;
+	const found = document.cookie
+		.split(";")
+		.map((item) => item.trim())
+		.find((item) => item.startsWith(prefix));
+
+	return found ? decodeURIComponent(found.substring(prefix.length)) : null;
+}
+
+function setPreference(key, value)
+{
+	setCookie(key, value);
+	localStorage.setItem(key, value);
+}
+
+function getPreference(key)
+{
+	return getCookie(key) || localStorage.getItem(key);
+}
+
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const FORCE_ANIMATIONS = true;
 const animationsEnabled = FORCE_ANIMATIONS || !prefersReducedMotion;
@@ -409,7 +437,7 @@ function applyTheme(theme)
 {
 	document.body.setAttribute("data-theme", theme);
 	elements.themeToggle.checked = theme === "dark";
-	localStorage.setItem(THEME_KEY, theme);
+	setPreference(THEME_KEY, theme);
 }
 
 function toggleTheme()
@@ -490,7 +518,7 @@ function setLanguage(lang, options = {})
 	elements.enBtn.classList.toggle("isActive", lang === "en");
 	elements.esBtn.classList.toggle("isActive", lang === "es");
 
-	localStorage.setItem(LANG_KEY, lang);
+	setPreference(LANG_KEY, lang);
 	if (animationsEnabled && animateSkills)
 	{
 		void runSkillsGeneration(lang);
@@ -505,8 +533,8 @@ async function runIntroAnimations(lang)
 
 function init()
 {
-	const savedTheme = localStorage.getItem(THEME_KEY) || "dark";
-	const savedLang = localStorage.getItem(LANG_KEY) || "en";
+	const savedTheme = getPreference(THEME_KEY) || "dark";
+	const savedLang = getPreference(LANG_KEY) || "en";
 
 	applyTheme(savedTheme);
 	setLanguage(savedLang, { animateSkills: false });
