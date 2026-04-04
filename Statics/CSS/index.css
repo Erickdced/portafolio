@@ -398,6 +398,28 @@ body[data-theme="light"] .heroActionBtn
     border-color: rgba(var(--accent-rgb), 0.6);
 }
 
+#project4 .projectImagePlaceholder
+{
+    background-image: url("../../Media/Images/project4.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-style: solid;
+    border-color: rgba(var(--accent-rgb), 0.6);
+    color: transparent;
+}
+
+#project5 .projectImagePlaceholder
+{
+    background-image: url("../../Media/Images/project5.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-style: solid;
+    border-color: rgba(var(--accent-rgb), 0.6);
+    color: transparent;
+}
+
 .projectTags
 {
     display: flex;
@@ -500,14 +522,28 @@ body[data-theme="light"] .toggleSwitch input:checked + .slider
     gap: 0.8rem;
 }
 
-#Contact > div
+.contactItem
 {
     display: flex;
     align-items: center;
     gap: 0.7rem;
+    text-decoration: none;
+    color: var(--text-muted);
+    padding: 0.5rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 0.6rem;
+    background-color: var(--bg-soft);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.18s ease;
 }
 
-#Contact button
+.contactItem:hover
+{
+    border-color: var(--accent-soft);
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+}
+
+.contactIcon
 {
     border: 1px solid var(--border);
     border-radius: 50%;
@@ -515,6 +551,46 @@ body[data-theme="light"] .toggleSwitch input:checked + .slider
     height: 2rem;
     background-color: var(--bg-soft);
     color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contactValue
+{
+    margin-left: auto;
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+.contactValueLink
+{
+    text-decoration: none;
+    border-bottom: 1px dashed transparent;
+    transition: border-color 0.2s ease;
+}
+
+.contactValueLink:hover
+{
+    border-color: var(--accent-soft);
+}
+
+.copyMailBtn
+{
+    border: 1px solid var(--accent-soft);
+    background-color: transparent;
+    color: var(--accent);
+    border-radius: 0.45rem;
+    padding: 0.28rem 0.5rem;
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.copyMailBtn:hover
+{
+    box-shadow: var(--shadow);
 }
 
 @media (max-width: 850px)

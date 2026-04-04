@@ -44,7 +44,7 @@ const translations = {
 		langLabel: "Language:",
 		themeText: "Dark Mode",
 		heroQuote: "I don't wait to be taught — I build.",
-		heroSubtitle: "Engineering student by day. Self-taught builder since age 12. Full stack, embedded systems, and cybersecurity — from Mexico City.",
+		heroSubtitle: "Engineering student by day. Self-taught builder since 3 years. Full stack, embedded systems, and cybersecurity — from Mexico City.",
 		cvDownloadBtn: "Download CV (PDF)",
 		skillsLanguages: "Languages",
 		skillsEmbedded: "Embedded",
@@ -97,7 +97,9 @@ const translations = {
 		project5Description: "A full production web system, actively used by real staff. Client and details are confidential — but it ships, it runs, and it works.",
 		contactMail: "mail",
 		contactLinkedin: "linkedin",
-		contactGithub: "github"
+		contactGithub: "github",
+		contactCopy: "Copy",
+		contactCopied: "Copied"
 	},
 	es: {
 		pageTitle: "Portafolio",
@@ -108,7 +110,7 @@ const translations = {
 		langLabel: "Idioma:",
 		themeText: "Modo oscuro",
 		heroQuote: "No espero a que me enseñen — construyo.",
-		heroSubtitle: "Estudiante de ingeniería de día. Constructor autodidacta desde los 12 años. Full stack, sistemas embebidos y ciberseguridad — desde Ciudad de México.",
+		heroSubtitle: "Estudiante de ingeniería de día. Constructor autodidacta desde hace 3 años. Full stack, sistemas embebidos y ciberseguridad — desde Ciudad de México.",
 		cvDownloadBtn: "Descargar CV (PDF)",
 		skillsLanguages: "Lenguajes",
 		skillsEmbedded: "Embebidos",
@@ -161,7 +163,9 @@ const translations = {
 		project5Description: "Un sistema web de producción completo, usado activamente por personal real. El cliente y los detalles son confidenciales, pero está desplegado, funciona y cumple.",
 		contactMail: "correo",
 		contactLinkedin: "linkedin",
-		contactGithub: "github"
+		contactGithub: "github",
+		contactCopy: "Copiar",
+		contactCopied: "Copiado"
 	}
 };
 
@@ -271,10 +275,13 @@ const elements = {
 	certificationsTitle: document.querySelector("#certifications h2"),
 	certificationsText: document.querySelector("#certifications div"),
 	certificationsBtn: document.getElementById("certs"),
-	mailText: document.querySelector("#Contact > div:nth-child(1)").lastChild,
-	linkedinText: document.querySelector("#Contact > div:nth-child(2)").lastChild,
-	githubText: document.querySelector("#Contact > div:nth-child(3)").lastChild
+	mailText: document.getElementById("mailText"),
+	linkedinText: document.getElementById("linkedinText"),
+	githubText: document.getElementById("githubText"),
+	copyMailBtn: document.getElementById("copyMailBtn")
 };
+
+let copyResetTimeoutId = null;
 
 function sleep(ms)
 {
@@ -446,6 +453,45 @@ function toggleTheme()
 	applyTheme(nextTheme);
 }
 
+async function copyMailToClipboard()
+{
+	const email = "erickdcedillo21@gmail.com";
+	const currentLang = document.documentElement.lang === "es" ? "es" : "en";
+	const copy = translations[currentLang] || translations.en;
+
+	if (!elements.copyMailBtn)
+	{
+		return;
+	}
+
+	try
+	{
+		await navigator.clipboard.writeText(email);
+	}
+	catch (_error)
+	{
+		const input = document.createElement("input");
+		input.value = email;
+		document.body.appendChild(input);
+		input.select();
+		document.execCommand("copy");
+		document.body.removeChild(input);
+	}
+
+	elements.copyMailBtn.textContent = copy.contactCopied;
+
+	if (copyResetTimeoutId)
+	{
+		clearTimeout(copyResetTimeoutId);
+	}
+
+	copyResetTimeoutId = window.setTimeout(() => {
+		const lang = document.documentElement.lang === "es" ? "es" : "en";
+		const nextCopy = translations[lang] || translations.en;
+		elements.copyMailBtn.textContent = nextCopy.contactCopy;
+	}, 1400);
+}
+
 function setLanguage(lang, options = {})
 {
 	const { animateSkills = true } = options;
@@ -514,6 +560,7 @@ function setLanguage(lang, options = {})
 	elements.mailText.textContent = copy.contactMail;
 	elements.linkedinText.textContent = copy.contactLinkedin;
 	elements.githubText.textContent = copy.contactGithub;
+	elements.copyMailBtn.textContent = copy.contactCopy;
 
 	elements.enBtn.classList.toggle("isActive", lang === "en");
 	elements.esBtn.classList.toggle("isActive", lang === "es");
@@ -551,6 +598,7 @@ function init()
 	elements.themeToggle.addEventListener("change", toggleTheme);
 	elements.enBtn.addEventListener("click", () => setLanguage("en"));
 	elements.esBtn.addEventListener("click", () => setLanguage("es"));
+	elements.copyMailBtn.addEventListener("click", copyMailToClipboard);
 }
 
 document.addEventListener("DOMContentLoaded", init);
