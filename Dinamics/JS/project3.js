@@ -1,13 +1,13 @@
 window.PROJECT_PAGE = {
     en: {
-        pageTitle: "Project 3 | Web Development Mentorship",
+        pageTitle: "Project 3 | Curso de JavaScript - ENP 6",
         name: "Erick Cedillo",
         navOverview: "Challenge",
         navStack: "Engineering",
         navImpact: "Achievements",
         navBack: "Back",
         themeText: "Dark Mode",
-        projectTitle: "Web Development Mentorship: From Zero to Shipped Product",
+        projectTitle: "Curso de JavaScript - ENP 6",
         projectSubtitle: "Technical Leadership, Curriculum Design, and Team Management.",
         backHome: "Back to projects",
         sectionOverviewTitle: "The Challenge: Scaling Knowledge",
@@ -27,14 +27,14 @@ window.PROJECT_PAGE = {
         ]
     },
     es: {
-        pageTitle: "Proyecto 3 | Mentoría de Desarrollo Web",
+        pageTitle: "Proyecto 3 | Curso de JavaScript - ENP 6",
         name: "Erick Cedillo",
         navOverview: "Reto",
         navStack: "Ingeniería",
         navImpact: "Logros",
         navBack: "Volver",
         themeText: "Modo oscuro",
-        projectTitle: "Web Development Mentorship: From Zero to Shipped Product",
+        projectTitle: "Curso de JavaScript - ENP 6",
         projectSubtitle: "Technical Leadership, Curriculum Design, and Team Management.",
         backHome: "Volver a proyectos",
         sectionOverviewTitle: "El Reto: Escalar el Conocimiento",

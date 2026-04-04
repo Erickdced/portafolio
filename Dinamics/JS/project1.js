@@ -1,13 +1,13 @@
 window.PROJECT_PAGE = {
     en: {
-        pageTitle: "Project 1 | Custom 2D Game Engine & RPG Core",
+        pageTitle: "Project 1 | Swords and laser",
         name: "Erick Cedillo",
         navOverview: "Challenge",
         navStack: "Engineering",
         navImpact: "Achievements",
         navBack: "Back",
         themeText: "Dark Mode",
-        projectTitle: "Custom 2D Game Engine & RPG Core",
+        projectTitle: "Swords and laser",
         projectSubtitle: "A study on procedural C and low-level resource management.",
         backHome: "Back to projects",
         sectionOverviewTitle: "Technical Challenge",
@@ -27,14 +27,14 @@ window.PROJECT_PAGE = {
         ]
     },
     es: {
-        pageTitle: "Proyecto 1 | Custom 2D Game Engine & RPG Core",
+        pageTitle: "Proyecto 1 | Swords and laser",
         name: "Erick Cedillo",
         navOverview: "Reto",
         navStack: "Ingeniería",
         navImpact: "Logros",
         navBack: "Volver",
         themeText: "Modo oscuro",
-        projectTitle: "Custom 2D Game Engine & RPG Core",
+        projectTitle: "Swords and laser",
         projectSubtitle: "Un estudio de C procedural y gestión de recursos a bajo nivel.",
         backHome: "Volver a proyectos",
         sectionOverviewTitle: "El Reto Técnico",

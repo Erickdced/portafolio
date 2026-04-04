@@ -1,13 +1,13 @@
 window.PROJECT_PAGE = {
     en: {
-        pageTitle: "Project 2 | Mechatronic Bridge Control",
+        pageTitle: "Project 2 | Sistema de control de puente movil",
         name: "Erick Cedillo",
         navOverview: "Challenge",
         navStack: "Engineering",
         navImpact: "Specs",
         navBack: "Back",
         themeText: "Dark Mode",
-        projectTitle: "Mobile Bridge Control System (Mechatronic Bridge Control)",
+        projectTitle: "Sistema de control de puente movil",
         projectSubtitle: "Hardware-software integration for actuator control and ultrasonic monitoring.",
         backHome: "Back to projects",
         sectionOverviewTitle: "Engineering Challenge",
@@ -27,14 +27,14 @@ window.PROJECT_PAGE = {
         ]
     },
     es: {
-        pageTitle: "Proyecto 2 | Mechatronic Bridge Control",
+        pageTitle: "Proyecto 2 | Sistema de control de puente movil",
         name: "Erick Cedillo",
         navOverview: "Reto",
         navStack: "Ingeniería",
         navImpact: "Specs",
         navBack: "Volver",
         themeText: "Modo oscuro",
-        projectTitle: "Sistema de Control de Puente Móvil (Mechatronic Bridge Control)",
+        projectTitle: "Sistema de control de puente movil",
         projectSubtitle: "Integración de hardware y software para el control de actuadores y monitoreo ultrasónico.",
         backHome: "Volver a proyectos",
         sectionOverviewTitle: "El Reto de Ingeniería",
