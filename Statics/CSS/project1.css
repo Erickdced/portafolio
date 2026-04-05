@@ -2,6 +2,14 @@
 
 /* Project 1 page custom styles */
 
+.heroActionsRow
+{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	margin-top: 0.85rem;
+}
+
 .sectionSplit
 {
 	display: grid;
