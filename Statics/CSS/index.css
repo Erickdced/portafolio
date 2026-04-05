@@ -393,17 +393,24 @@ body[data-theme="light"] .heroActionBtn
 
 #project1 .projectImagePlaceholder
 {
-    height: 9rem;
+    min-height: 9rem;
+    background-image: url("../../Media/Images/project1.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #151515;
     border-style: solid;
     border-color: rgba(var(--accent-rgb), 0.6);
+    color: transparent;
 }
 
 #project4 .projectImagePlaceholder
 {
     background-image: url("../../Media/Images/project4.png");
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #151515;
     border-style: solid;
     border-color: rgba(var(--accent-rgb), 0.6);
     color: transparent;
@@ -412,9 +419,10 @@ body[data-theme="light"] .heroActionBtn
 #project5 .projectImagePlaceholder
 {
     background-image: url("../../Media/Images/project5.png");
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #151515;
     border-style: solid;
     border-color: rgba(var(--accent-rgb), 0.6);
     color: transparent;
@@ -451,7 +459,9 @@ body[data-theme="light"] .projectTag
 .projectImagePlaceholder
 {
     width: 100%;
-    height: 8rem;
+    height: auto;
+    min-height: 8rem;
+    aspect-ratio: 16 / 9;
     border: 1px dashed var(--accent-soft);
     border-radius: 0.55rem;
     background: linear-gradient(145deg, #2f2f2f, #212121);

@@ -1,3 +1,38 @@
 @import url("./project-base.css");
 
 /* Project 1 page custom styles */
+
+.sectionSplit
+{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 0.9rem;
+	align-items: start;
+}
+
+.mediaCard
+{
+	margin: 0;
+	border: 1px solid var(--border);
+	border-radius: 0.65rem;
+	background-color: var(--bg-soft);
+	overflow: hidden;
+	box-shadow: var(--shadow);
+}
+
+.sectionSplit > ul
+{
+	padding-left: 1.2rem;
+}
+
+.mediaCard img,
+.mediaCard video
+{
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	max-height: 20rem;
+	object-fit: contain;
+	background-color: #111111;
+}
