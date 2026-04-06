@@ -76,7 +76,30 @@ function fillList(listElement, values)
     listElement.innerHTML = "";
     values.forEach((value) => {
         const li = document.createElement("li");
-        li.textContent = value;
+        const colonIndex = value.indexOf(":");
+        const dashIndex = value.indexOf("—");
+        const splitIndex = colonIndex > -1
+            ? colonIndex
+            : dashIndex;
+
+        if (splitIndex > -1)
+        {
+            const lead = value.slice(0, splitIndex + 1);
+            const rest = value.slice(splitIndex + 1).trimStart();
+            const leadStrong = document.createElement("strong");
+            leadStrong.className = "bulletLead";
+            leadStrong.textContent = lead;
+            li.appendChild(leadStrong);
+            if (rest)
+            {
+                li.appendChild(document.createTextNode(` ${rest}`));
+            }
+        }
+        else
+        {
+            li.textContent = value;
+        }
+
         listElement.appendChild(li);
     });
 }

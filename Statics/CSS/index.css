@@ -569,12 +569,14 @@ body[data-theme="light"] .toggleSwitch input:checked + .slider
 
 #certs
 {
+    display: inline-block;
     width: fit-content;
     padding: 0.55rem 0.95rem;
     border-radius: 0.5rem;
     border: 1px solid var(--accent-soft);
     background-color: var(--bg-soft);
     color: var(--accent);
+    text-decoration: none;
     cursor: pointer;
     transition: all 0.2s ease;
 }

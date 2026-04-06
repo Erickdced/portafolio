@@ -1,0 +1,36 @@
+@import url("./project-base.css");
+
+.certGrid
+{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.85rem;
+}
+
+.certCard
+{
+    border: 1px solid var(--border);
+    border-radius: 0.7rem;
+    background-color: var(--bg-soft);
+    padding: 0.9rem;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.certCard h3
+{
+    color: var(--accent);
+}
+
+.certCard p
+{
+    color: var(--text-muted);
+}
+
+.certCard .primaryBtn
+{
+    margin-top: 0.2rem;
+    pointer-events: none;
+    opacity: 0.65;
+}

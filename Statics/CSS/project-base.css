@@ -151,6 +151,7 @@ section{background:var(--bg-surface);border:1px solid var(--border);border-radiu
 
 h2{color:var(--accent);font-size:1.05rem;margin-bottom:0.5rem;}
 ul{padding-left:1.2rem;color:var(--text-muted);}
+.bulletLead{font-weight:700;color:var(--text-main);}
 p{color:var(--text-muted);}
 
 @media (max-width:850px){
