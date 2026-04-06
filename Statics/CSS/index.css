@@ -74,6 +74,7 @@ nav #name
     font-size: 1.05rem;
     color: var(--accent);
     text-shadow: 0 0 0.35rem rgba(var(--accent-rgb), 0.45);
+    cursor: pointer;
 }
 
 nav #buttons

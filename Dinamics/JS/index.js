@@ -209,6 +209,7 @@ const skillItems = {
 };
 
 const elements = {
+	name: document.getElementById("name"),
 	themeToggle: document.getElementById("themeToggle"),
 	enBtn: document.getElementById("enBtn"),
 	esBtn: document.getElementById("esBtn"),
@@ -599,6 +600,12 @@ function init()
 	elements.enBtn.addEventListener("click", () => setLanguage("en"));
 	elements.esBtn.addEventListener("click", () => setLanguage("es"));
 	elements.copyMailBtn.addEventListener("click", copyMailToClipboard);
+	if (elements.name)
+	{
+		elements.name.addEventListener("click", () => {
+			window.location.href = "index.html";
+		});
+	}
 }
 
 document.addEventListener("DOMContentLoaded", init);
