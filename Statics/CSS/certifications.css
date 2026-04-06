@@ -9,7 +9,7 @@
 {
     margin-top: 1rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
 }
 
@@ -22,6 +22,14 @@
     display: grid;
     gap: 0.6rem;
     box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.22s ease, border-color 0.2s ease;
+}
+
+.certCard:hover
+{
+    transform: translateY(-3px);
+    border-color: var(--accent-soft);
+    box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.28);
 }
 
 .certCard h3
@@ -45,6 +53,22 @@
     height: 100%;
     border: 0;
     display: block;
+    transform-origin: center top;
+    transition: transform 0.28s ease;
+}
+
+.certCard:hover .certPreview
+{
+    transform: scale(1.04);
+}
+
+.certInstitution
+{
+    margin: -0.1rem 0 0;
+    color: var(--text-main);
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
 }
 
 .certDescription
@@ -66,10 +90,28 @@
     text-align: center;
 }
 
+@media (max-width: 980px)
+{
+    .certGrid
+    {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 640px)
 {
     .certGrid
     {
         grid-template-columns: 1fr;
+    }
+
+    .certCard
+    {
+        padding: 0.7rem;
+    }
+
+    .certPreviewWrap
+    {
+        aspect-ratio: 16 / 10;
     }
 }
