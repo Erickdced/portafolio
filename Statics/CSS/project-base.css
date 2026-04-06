@@ -58,6 +58,29 @@ nav{
     font-weight:700;
 }
 
+.menuToggle{
+    display:none;
+    border:1px solid var(--border);
+    border-radius:0.45rem;
+    background:var(--bg-soft);
+    color:var(--text-main);
+    cursor:pointer;
+    padding:0.35rem 0.62rem;
+    font-size:1.2rem;
+    line-height:1;
+    transition:all 0.2s ease;
+}
+
+.menuToggle:hover{
+    background:#2e2e2e;
+    border-color:var(--accent-soft);
+    box-shadow:var(--shadow);
+}
+
+body[data-theme="light"] .menuToggle:hover{
+    background:#e8edf2;
+}
+
 #buttons{
     display:flex;
     flex-wrap:wrap;
@@ -136,11 +159,14 @@ p{color:var(--text-muted);}
 }
 
 @media (max-width:640px){
-    nav{padding:0.85rem 1rem;}
-    #buttons{width:100%;gap:0.5rem;}
+    nav{flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:0.85rem 1rem;}
+    .menuToggle{display:inline-flex;align-items:center;justify-content:center;}
+    #buttons{display:none;width:100%;flex-direction:column;align-items:stretch;gap:0.5rem;padding-top:0.7rem;margin-top:0.55rem;border-top:1px solid rgba(var(--accent-rgb),0.35);}
+    #buttons.isOpen{display:flex;}
+    #buttons > div{width:100%;}
     .navLink,
     #buttons button,
-    #buttons .langBtn{padding:0.4rem 0.62rem;font-size:0.86rem;}
+    #buttons .langBtn{width:100%;padding:0.4rem 0.62rem;font-size:0.86rem;}
     section{padding:0.95rem;}
     .primaryBtn{width:100%;text-align:center;}
 }

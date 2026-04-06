@@ -47,6 +47,7 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const FORCE_ANIMATIONS = true;
 const animationsEnabled = FORCE_ANIMATIONS || !prefersReducedMotion;
 let skillsAnimationRunId = 0;
+const mobileMenuMediaQuery = window.matchMedia("(max-width: 640px)");
 
 const translations = {
 	en: {
@@ -223,7 +224,11 @@ const skillItems = {
 };
 
 const elements = {
+	nav: document.querySelector("nav"),
 	name: document.getElementById("name"),
+	menuToggle: document.getElementById("menuToggle"),
+	buttons: document.getElementById("buttons"),
+	navLinks: document.querySelectorAll("#buttons .navLink"),
 	themeToggle: document.getElementById("themeToggle"),
 	enBtn: document.getElementById("enBtn"),
 	esBtn: document.getElementById("esBtn"),
@@ -593,6 +598,33 @@ async function runIntroAnimations(lang)
 	await runSkillsGeneration(lang);
 }
 
+function closeMobileMenu()
+{
+	if (!elements.buttons)
+	{
+		return;
+	}
+
+	elements.buttons.classList.remove("isOpen");
+	if (elements.menuToggle)
+	{
+		elements.menuToggle.setAttribute("aria-expanded", "false");
+		elements.menuToggle.textContent = "☰";
+	}
+}
+
+function toggleMobileMenu()
+{
+	if (!elements.buttons || !elements.menuToggle)
+	{
+		return;
+	}
+
+	const isOpen = elements.buttons.classList.toggle("isOpen");
+	elements.menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+	elements.menuToggle.textContent = isOpen ? "✕" : "☰";
+}
+
 function init()
 {
 	const savedTheme = getPreference(THEME_KEY) || "dark";
@@ -617,6 +649,39 @@ function init()
 	elements.enBtn.addEventListener("click", () => setLanguage("en"));
 	elements.esBtn.addEventListener("click", () => setLanguage("es"));
 	elements.copyMailBtn.addEventListener("click", copyMailToClipboard);
+
+	if (elements.menuToggle)
+	{
+		elements.menuToggle.addEventListener("click", toggleMobileMenu);
+		elements.navLinks.forEach((link) => {
+			link.addEventListener("click", closeMobileMenu);
+		});
+
+		document.addEventListener("click", (event) => {
+			if (!mobileMenuMediaQuery.matches || !elements.buttons || !elements.nav)
+			{
+				return;
+			}
+
+			if (!elements.buttons.classList.contains("isOpen"))
+			{
+				return;
+			}
+
+			if (!elements.nav.contains(event.target))
+			{
+				closeMobileMenu();
+			}
+		});
+
+		window.addEventListener("resize", () => {
+			if (!mobileMenuMediaQuery.matches)
+			{
+				closeMobileMenu();
+			}
+		});
+	}
+
 	if (elements.name)
 	{
 		elements.name.addEventListener("click", () => {
