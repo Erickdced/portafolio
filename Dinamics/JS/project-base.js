@@ -25,6 +25,20 @@ function getPreference(key)
     return getCookie(key) || localStorage.getItem(key);
 }
 
+function getDefaultLanguageFromBrowser()
+{
+    const browserLanguages = Array.isArray(navigator.languages) && navigator.languages.length > 0
+        ? navigator.languages
+        : [navigator.language || "en"];
+
+    const hasSpanish = browserLanguages
+        .filter(Boolean)
+        .map((lang) => lang.toLowerCase())
+        .some((lang) => lang.startsWith("es"));
+
+    return hasSpanish ? "es" : "en";
+}
+
 const elements = {
     themeToggle: document.getElementById("themeToggle"),
     enBtn: document.getElementById("enBtn"),
@@ -90,10 +104,13 @@ function setLanguage(lang)
 function init()
 {
     const savedTheme = getPreference(THEME_KEY) || "dark";
-    const savedLang = getPreference(LANG_KEY) || "en";
+    const savedLang = getPreference(LANG_KEY);
+    const initialLang = savedLang === "es" || savedLang === "en"
+        ? savedLang
+        : getDefaultLanguageFromBrowser();
 
     applyTheme(savedTheme);
-    setLanguage(savedLang);
+    setLanguage(initialLang);
 
     elements.themeToggle.addEventListener("change", () => {
         applyTheme(elements.themeToggle.checked ? "dark" : "light");

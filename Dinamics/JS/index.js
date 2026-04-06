@@ -29,6 +29,20 @@ function getPreference(key)
 	return getCookie(key) || localStorage.getItem(key);
 }
 
+function getDefaultLanguageFromBrowser()
+{
+	const browserLanguages = Array.isArray(navigator.languages) && navigator.languages.length > 0
+		? navigator.languages
+		: [navigator.language || "en"];
+
+	const hasSpanish = browserLanguages
+		.filter(Boolean)
+		.map((lang) => lang.toLowerCase())
+		.some((lang) => lang.startsWith("es"));
+
+	return hasSpanish ? "es" : "en";
+}
+
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const FORCE_ANIMATIONS = true;
 const animationsEnabled = FORCE_ANIMATIONS || !prefersReducedMotion;
@@ -582,18 +596,21 @@ async function runIntroAnimations(lang)
 function init()
 {
 	const savedTheme = getPreference(THEME_KEY) || "dark";
-	const savedLang = getPreference(LANG_KEY) || "en";
+	const savedLang = getPreference(LANG_KEY);
+	const initialLang = savedLang === "es" || savedLang === "en"
+		? savedLang
+		: getDefaultLanguageFromBrowser();
 
 	applyTheme(savedTheme);
-	setLanguage(savedLang, { animateSkills: false });
-	hideAllSkillLines(savedLang);
+	setLanguage(initialLang, { animateSkills: false });
+	hideAllSkillLines(initialLang);
 	if (animationsEnabled)
 	{
-		void runIntroAnimations(savedLang);
+		void runIntroAnimations(initialLang);
 	}
 	else
 	{
-		void runSkillsGeneration(savedLang);
+		void runSkillsGeneration(initialLang);
 	}
 
 	elements.themeToggle.addEventListener("change", toggleTheme);
