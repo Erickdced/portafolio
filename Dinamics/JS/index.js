@@ -61,6 +61,8 @@ const translations = {
 		heroQuote: "I don't wait to be taught — I build.",
 		heroSubtitle: "Engineering student by day. Self-taught builder since 3 years. Full stack, embedded systems, and cybersecurity — from Mexico City.",
 		cvDownloadBtn: "Download CV (PDF)",
+		cvDownloadFile: "Media/PDFs/CV_ErickCedillo_EN.pdf",
+		cvDownloadName: "CV_ErickCedillo_EN.pdf",
 		skillsLanguages: "Languages",
 		skillsEmbedded: "Embedded",
 		skillsInfrastructure: "Infrastructure",
@@ -127,6 +129,8 @@ const translations = {
 		heroQuote: "No espero a que me enseñen — construyo.",
 		heroSubtitle: "Estudiante de ingeniería de día. Constructor autodidacta desde hace 3 años. Full stack, sistemas embebidos y ciberseguridad — desde Ciudad de México.",
 		cvDownloadBtn: "Descargar CV (PDF)",
+		cvDownloadFile: "Media/PDFs/CV_ErickCedillo_ES.pdf",
+		cvDownloadName: "CV_ErickCedillo_ES.pdf",
 		skillsLanguages: "Lenguajes",
 		skillsEmbedded: "Embebidos",
 		skillsInfrastructure: "Infraestructura",
@@ -530,6 +534,8 @@ function setLanguage(lang, options = {})
 	elements.heroQuote.textContent = copy.heroQuote;
 	elements.heroSubtitle.textContent = copy.heroSubtitle;
 	elements.cvDownloadBtn.textContent = copy.cvDownloadBtn;
+	elements.cvDownloadBtn.href = copy.cvDownloadFile;
+	elements.cvDownloadBtn.setAttribute("download", copy.cvDownloadName);
 	elements.project1ImageText.textContent = copy.project1ImageText;
 	elements.project1Title.textContent = copy.project1Title;
 	elements.project1Tag1.textContent = copy.project1Tag1;
