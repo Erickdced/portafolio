@@ -44,3 +44,11 @@
 	object-fit: contain;
 	background-color: #111111;
 }
+
+@media (max-width: 640px)
+{
+	.sectionSplit
+	{
+		grid-template-columns: 1fr;
+	}
+}

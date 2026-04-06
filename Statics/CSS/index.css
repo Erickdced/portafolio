@@ -86,6 +86,14 @@ nav #buttons
     flex-wrap: wrap;
 }
 
+nav #buttons > div
+{
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+}
+
 nav #buttons .navLink
 {
     border: 1px solid var(--border);
@@ -597,6 +605,7 @@ body[data-theme="light"] .toggleSwitch input:checked + .slider
     margin-left: auto;
     font-size: 0.9rem;
     color: var(--text-main);
+    overflow-wrap: anywhere;
 }
 
 .contactValueLink
@@ -661,5 +670,95 @@ body[data-theme="light"] .toggleSwitch input:checked + .slider
     .heroActionBtn
     {
         width: 100%;
+    }
+}
+
+@media (max-width: 640px)
+{
+    nav
+    {
+        padding: 0.85rem 1rem;
+    }
+
+    nav #buttons
+    {
+        width: 100%;
+        gap: 0.55rem;
+    }
+
+    nav #buttons .navLink,
+    nav #buttons button
+    {
+        padding: 0.4rem 0.62rem;
+        font-size: 0.86rem;
+    }
+
+    main
+    {
+        padding: 0.85rem;
+    }
+
+    #hero,
+    #skills,
+    #projects,
+    #certifications,
+    #Contact
+    {
+        padding: 1rem;
+    }
+
+    .profilePhoto
+    {
+        width: 5.8rem;
+        height: 5.8rem;
+    }
+
+    .row
+    {
+        grid-template-columns: 1fr;
+    }
+
+    .contactItem
+    {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .contactValue
+    {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 2.7rem;
+    }
+
+    .copyMailBtn
+    {
+        margin-left: 2.7rem;
+    }
+}
+
+@media (max-width: 420px)
+{
+    nav #name
+    {
+        font-size: 0.98rem;
+    }
+
+    #langLabel,
+    #themeText
+    {
+        font-size: 0.58rem;
+    }
+
+    .heroActionBtn,
+    #certs
+    {
+        width: 100%;
+    }
+
+    .projectTag
+    {
+        font-size: 0.58rem;
+        padding: 0.14rem 0.44rem;
     }
 }
