@@ -9,3 +9,38 @@
 	gap: 0.6rem;
 	margin-top: 0.85rem;
 }
+
+.sectionSplit
+{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 0.9rem;
+	align-items: start;
+}
+
+.sectionSplit > ul
+{
+	padding-left: 1.2rem;
+}
+
+.mediaCard
+{
+	margin: 0;
+	border: 1px solid var(--border);
+	border-radius: 0.65rem;
+	background-color: var(--bg-soft);
+	overflow: hidden;
+	box-shadow: var(--shadow);
+}
+
+.mediaCard img,
+.mediaCard video
+{
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	max-height: 20rem;
+	object-fit: contain;
+	background-color: #111111;
+}
