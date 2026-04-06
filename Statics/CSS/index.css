@@ -416,6 +416,18 @@ body[data-theme="light"] .heroActionBtn
     color: transparent;
 }
 
+#project3 .projectImagePlaceholder
+{
+    background-image: url("../../Media/Images/Project3.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #151515;
+    border-style: solid;
+    border-color: rgba(var(--accent-rgb), 0.6);
+    color: transparent;
+}
+
 #project4 .projectImagePlaceholder
 {
     background-image: url("../../Media/Images/project4.png");
