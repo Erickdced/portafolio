@@ -1,11 +1,16 @@
 @import url("./project-base.css");
 
+.helperList
+{
+    display: none;
+}
+
 .certGrid
 {
     margin-top: 1rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 0.85rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
 }
 
 .certCard
@@ -13,24 +18,58 @@
     border: 1px solid var(--border);
     border-radius: 0.7rem;
     background-color: var(--bg-soft);
-    padding: 0.9rem;
+    padding: 0.8rem;
     display: grid;
-    gap: 0.5rem;
+    gap: 0.6rem;
+    box-shadow: var(--shadow);
 }
 
 .certCard h3
 {
     color: var(--accent);
+    font-size: 1rem;
 }
 
-.certCard p
+.certPreviewWrap
+{
+    border: 1px solid var(--border);
+    border-radius: 0.55rem;
+    overflow: hidden;
+    background-color: #111111;
+    aspect-ratio: 4 / 5;
+}
+
+.certPreview
+{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.certDescription
 {
     color: var(--text-muted);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    min-height: 3em;
 }
 
 .certCard .primaryBtn
 {
-    margin-top: 0.2rem;
-    pointer-events: none;
-    opacity: 0.65;
+    margin-top: 0.1rem;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 640px)
+{
+    .certGrid
+    {
+        grid-template-columns: 1fr;
+    }
 }

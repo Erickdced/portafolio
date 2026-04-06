@@ -125,6 +125,11 @@ function setLanguage(lang)
     fillList(elements.stackList, copy.stackItems);
     fillList(elements.impactList, copy.impactItems);
 
+    if (typeof window.afterProjectLanguageSet === "function")
+    {
+        window.afterProjectLanguageSet(lang, copy);
+    }
+
     elements.enBtn.classList.toggle("isActive", lang === "en");
     elements.esBtn.classList.toggle("isActive", lang === "es");
     setPreference(LANG_KEY, lang);
