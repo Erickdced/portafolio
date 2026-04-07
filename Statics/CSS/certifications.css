@@ -86,16 +86,20 @@
     .certGrid
     {
         grid-template-columns: 1fr;
+        gap: 0.8rem;
     }
 
     .certCard
     {
         padding: 0.7rem;
+        max-width: 26rem;
+        margin-inline: auto;
     }
 
     .certPreviewWrap
     {
-        aspect-ratio: 4 / 3;
+        aspect-ratio: auto;
+        height: clamp(8.5rem, 34vw, 11rem);
     }
 
     .certCard h3
