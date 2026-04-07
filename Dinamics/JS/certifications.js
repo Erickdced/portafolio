@@ -12,18 +12,28 @@ const translations = {
         heroSubtitle: "Verified documents and awards.",
         backHome: "Back to home",
         listTitle: "Certificates",
-        cert1Name: "Desarrollo de Proyectos Web con JavaScript",
-        cert1Institution: "Institution: Escuela Nacional Preparatoria Plantel 6 (UNAM)",
-        cert2Name: "Procesamiento de Datos y Creación de Macros con Excel",
-        cert2Institution: "Institution: Escuela Nacional Preparatoria Plantel 6 (UNAM)",
-        cert3Name: "Automatización de Tareas en Sistemas Linux con Programación Bash",
-        cert3Institution: "Institution: Escuela Nacional Preparatoria Plantel 6 (UNAM)",
-        cert1Aria: "Open Desarrollo de Proyectos Web con JavaScript PDF",
-        cert2Aria: "Open Procesamiento de Datos y Creación de Macros con Excel PDF",
-        cert3Aria: "Open Automatización de Tareas en Sistemas Linux con Programación Bash PDF",
-        cert1Alt: "Certificate preview: Desarrollo de Proyectos Web con JavaScript",
-        cert2Alt: "Certificate preview: Procesamiento de Datos y Creación de Macros con Excel",
-        cert3Alt: "Certificate preview: Automatización de Tareas en Sistemas Linux con Programación Bash"
+        menuLabelClosed: "Open navigation menu",
+        menuLabelOpen: "Close navigation menu",
+        certificates: [
+            {
+                name: "Desarrollo de Proyectos Web con JavaScript",
+                institution: "Institution: Escuela Nacional Preparatoria Plantel 6 (UNAM)",
+                aria: "Open Desarrollo de Proyectos Web con JavaScript PDF",
+                alt: "Certificate preview: Desarrollo de Proyectos Web con JavaScript"
+            },
+            {
+                name: "Procesamiento de Datos y Creación de Macros con Excel",
+                institution: "Institution: Escuela Nacional Preparatoria Plantel 6 (UNAM)",
+                aria: "Open Procesamiento de Datos y Creación de Macros con Excel PDF",
+                alt: "Certificate preview: Procesamiento de Datos y Creación de Macros con Excel"
+            },
+            {
+                name: "Automatización de Tareas en Sistemas Linux con Programación Bash",
+                institution: "Institution: Escuela Nacional Preparatoria Plantel 6 (UNAM)",
+                aria: "Open Automatización de Tareas en Sistemas Linux con Programación Bash PDF",
+                alt: "Certificate preview: Automatización de Tareas en Sistemas Linux con Programación Bash"
+            }
+        ]
     },
     es: {
         pageTitle: "Constancias | Erick Cedillo",
@@ -34,18 +44,28 @@ const translations = {
         heroSubtitle: "Documentos verificados y reconocimientos.",
         backHome: "Volver al inicio",
         listTitle: "Constancias",
-        cert1Name: "Desarrollo de Proyectos Web con JavaScript",
-        cert1Institution: "Institución: Escuela Nacional Preparatoria Plantel 6 (UNAM)",
-        cert2Name: "Procesamiento de Datos y Creación de Macros con Excel",
-        cert2Institution: "Institución: Escuela Nacional Preparatoria Plantel 6 (UNAM)",
-        cert3Name: "Automatización de Tareas en Sistemas Linux con Programación Bash",
-        cert3Institution: "Institución: Escuela Nacional Preparatoria Plantel 6 (UNAM)",
-        cert1Aria: "Abrir PDF: Desarrollo de Proyectos Web con JavaScript",
-        cert2Aria: "Abrir PDF: Procesamiento de Datos y Creación de Macros con Excel",
-        cert3Aria: "Abrir PDF: Automatización de Tareas en Sistemas Linux con Programación Bash",
-        cert1Alt: "Vista previa: Desarrollo de Proyectos Web con JavaScript",
-        cert2Alt: "Vista previa: Procesamiento de Datos y Creación de Macros con Excel",
-        cert3Alt: "Vista previa: Automatización de Tareas en Sistemas Linux con Programación Bash"
+        menuLabelClosed: "Abrir menú de navegación",
+        menuLabelOpen: "Cerrar menú de navegación",
+        certificates: [
+            {
+                name: "Desarrollo de Proyectos Web con JavaScript",
+                institution: "Institución: Escuela Nacional Preparatoria Plantel 6 (UNAM)",
+                aria: "Abrir PDF: Desarrollo de Proyectos Web con JavaScript",
+                alt: "Vista previa: Desarrollo de Proyectos Web con JavaScript"
+            },
+            {
+                name: "Procesamiento de Datos y Creación de Macros con Excel",
+                institution: "Institución: Escuela Nacional Preparatoria Plantel 6 (UNAM)",
+                aria: "Abrir PDF: Procesamiento de Datos y Creación de Macros con Excel",
+                alt: "Vista previa: Procesamiento de Datos y Creación de Macros con Excel"
+            },
+            {
+                name: "Automatización de Tareas en Sistemas Linux con Programación Bash",
+                institution: "Institución: Escuela Nacional Preparatoria Plantel 6 (UNAM)",
+                aria: "Abrir PDF: Automatización de Tareas en Sistemas Linux con Programación Bash",
+                alt: "Vista previa: Automatización de Tareas en Sistemas Linux con Programación Bash"
+            }
+        ]
     }
 };
 
@@ -63,20 +83,29 @@ const elements = {
     pageTitle: document.getElementById("pageTitle"),
     pageSubtitle: document.getElementById("pageSubtitle"),
     certificationsListTitle: document.getElementById("certificationsListTitle"),
-    cert1Name: document.getElementById("cert1Name"),
-    cert1Institution: document.getElementById("cert1Institution"),
-    cert2Name: document.getElementById("cert2Name"),
-    cert2Institution: document.getElementById("cert2Institution"),
-    cert3Name: document.getElementById("cert3Name"),
-    cert3Institution: document.getElementById("cert3Institution"),
-    cert1Card: document.getElementById("cert1Card"),
-    cert2Card: document.getElementById("cert2Card"),
-    cert3Card: document.getElementById("cert3Card"),
-    cert1Image: document.getElementById("cert1Image"),
-    cert2Image: document.getElementById("cert2Image"),
-    cert3Image: document.getElementById("cert3Image"),
     navLinks: document.querySelectorAll("#buttons .navLink")
 };
+
+const certElements = [
+    {
+        card: document.getElementById("cert1Card"),
+        image: document.getElementById("cert1Image"),
+        name: document.getElementById("cert1Name"),
+        institution: document.getElementById("cert1Institution")
+    },
+    {
+        card: document.getElementById("cert2Card"),
+        image: document.getElementById("cert2Image"),
+        name: document.getElementById("cert2Name"),
+        institution: document.getElementById("cert2Institution")
+    },
+    {
+        card: document.getElementById("cert3Card"),
+        image: document.getElementById("cert3Image"),
+        name: document.getElementById("cert3Name"),
+        institution: document.getElementById("cert3Institution")
+    }
+];
 
 function setCookie(name, value, days = 365)
 {
@@ -126,18 +155,26 @@ function applyTheme(theme)
     setPreference(THEME_KEY, theme);
 }
 
+function setMenuToggleState(isOpen)
+{
+    const lang = document.documentElement.lang === "es" ? "es" : "en";
+    const copy = translations[lang] || translations.en;
+
+    elements.menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    elements.menuToggle.setAttribute("aria-label", isOpen ? copy.menuLabelOpen : copy.menuLabelClosed);
+    elements.menuToggle.textContent = isOpen ? "✕" : "☰";
+}
+
 function closeMobileMenu()
 {
     elements.buttons.classList.remove("isOpen");
-    elements.menuToggle.setAttribute("aria-expanded", "false");
-    elements.menuToggle.textContent = "☰";
+    setMenuToggleState(false);
 }
 
 function toggleMobileMenu()
 {
     const isOpen = elements.buttons.classList.toggle("isOpen");
-    elements.menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    elements.menuToggle.textContent = isOpen ? "✕" : "☰";
+    setMenuToggleState(isOpen);
 }
 
 function setLanguage(lang)
@@ -153,19 +190,20 @@ function setLanguage(lang)
     elements.pageSubtitle.textContent = copy.heroSubtitle;
     elements.backHomeBtn.textContent = copy.backHome;
     elements.certificationsListTitle.textContent = copy.listTitle;
-    elements.cert1Name.textContent = copy.cert1Name;
-    elements.cert1Institution.textContent = copy.cert1Institution;
-    elements.cert2Name.textContent = copy.cert2Name;
-    elements.cert2Institution.textContent = copy.cert2Institution;
-    elements.cert3Name.textContent = copy.cert3Name;
-    elements.cert3Institution.textContent = copy.cert3Institution;
+    copy.certificates.forEach((cert, index) => {
+        const certElement = certElements[index];
+        if (!certElement)
+        {
+            return;
+        }
 
-    elements.cert1Card.setAttribute("aria-label", copy.cert1Aria);
-    elements.cert2Card.setAttribute("aria-label", copy.cert2Aria);
-    elements.cert3Card.setAttribute("aria-label", copy.cert3Aria);
-    elements.cert1Image.alt = copy.cert1Alt;
-    elements.cert2Image.alt = copy.cert2Alt;
-    elements.cert3Image.alt = copy.cert3Alt;
+        certElement.name.textContent = cert.name;
+        certElement.institution.textContent = cert.institution;
+        certElement.card.setAttribute("aria-label", cert.aria);
+        certElement.image.alt = cert.alt;
+    });
+
+    setMenuToggleState(elements.buttons.classList.contains("isOpen"));
 
     elements.enBtn.classList.toggle("isActive", lang === "en");
     elements.esBtn.classList.toggle("isActive", lang === "es");

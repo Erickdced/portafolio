@@ -56,6 +56,8 @@ const translations = {
 		navSkills: "Skills",
 		navProjects: "Projects",
 		navContact: "Contact",
+		menuLabelClosed: "Open navigation menu",
+		menuLabelOpen: "Close navigation menu",
 		langLabel: "Language:",
 		themeText: "Dark Mode",
 		heroQuote: "I don't wait to be taught — I build.",
@@ -124,6 +126,8 @@ const translations = {
 		navSkills: "Habilidades",
 		navProjects: "Proyectos",
 		navContact: "Contacto",
+		menuLabelClosed: "Abrir menú de navegación",
+		menuLabelOpen: "Cerrar menú de navegación",
 		langLabel: "Idioma:",
 		themeText: "Modo oscuro",
 		heroQuote: "No espero a que me enseñen — construyo.",
@@ -587,6 +591,11 @@ function setLanguage(lang, options = {})
 	elements.linkedinText.textContent = copy.contactLinkedin;
 	elements.githubText.textContent = copy.contactGithub;
 	elements.copyMailBtn.textContent = copy.contactCopy;
+	if (elements.menuToggle)
+	{
+		const isOpen = elements.buttons.classList.contains("isOpen");
+		elements.menuToggle.setAttribute("aria-label", isOpen ? copy.menuLabelOpen : copy.menuLabelClosed);
+	}
 
 	elements.enBtn.classList.toggle("isActive", lang === "en");
 	elements.esBtn.classList.toggle("isActive", lang === "es");
@@ -615,6 +624,9 @@ function closeMobileMenu()
 	if (elements.menuToggle)
 	{
 		elements.menuToggle.setAttribute("aria-expanded", "false");
+		const lang = document.documentElement.lang === "es" ? "es" : "en";
+		const copy = translations[lang] || translations.en;
+		elements.menuToggle.setAttribute("aria-label", copy.menuLabelClosed);
 		elements.menuToggle.textContent = "☰";
 	}
 }
@@ -628,6 +640,9 @@ function toggleMobileMenu()
 
 	const isOpen = elements.buttons.classList.toggle("isOpen");
 	elements.menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+	const lang = document.documentElement.lang === "es" ? "es" : "en";
+	const copy = translations[lang] || translations.en;
+	elements.menuToggle.setAttribute("aria-label", isOpen ? copy.menuLabelOpen : copy.menuLabelClosed);
 	elements.menuToggle.textContent = isOpen ? "✕" : "☰";
 }
 

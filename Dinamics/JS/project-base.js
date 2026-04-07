@@ -130,6 +130,14 @@ function setLanguage(lang)
         window.afterProjectLanguageSet(lang, copy);
     }
 
+    if (elements.menuToggle)
+    {
+        const isOpen = elements.buttons.classList.contains("isOpen");
+        elements.menuToggle.setAttribute("aria-label", lang === "es"
+            ? (isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación")
+            : (isOpen ? "Close navigation menu" : "Open navigation menu"));
+    }
+
     elements.enBtn.classList.toggle("isActive", lang === "en");
     elements.esBtn.classList.toggle("isActive", lang === "es");
     setPreference(LANG_KEY, lang);
@@ -146,6 +154,8 @@ function closeMobileMenu()
     if (elements.menuToggle)
     {
         elements.menuToggle.setAttribute("aria-expanded", "false");
+        const lang = document.documentElement.lang === "es" ? "es" : "en";
+        elements.menuToggle.setAttribute("aria-label", lang === "es" ? "Abrir menú de navegación" : "Open navigation menu");
         elements.menuToggle.textContent = "☰";
     }
 }
@@ -159,6 +169,10 @@ function toggleMobileMenu()
 
     const isOpen = elements.buttons.classList.toggle("isOpen");
     elements.menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    const lang = document.documentElement.lang === "es" ? "es" : "en";
+    elements.menuToggle.setAttribute("aria-label", lang === "es"
+        ? (isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación")
+        : (isOpen ? "Close navigation menu" : "Open navigation menu"));
     elements.menuToggle.textContent = isOpen ? "✕" : "☰";
 }
 
