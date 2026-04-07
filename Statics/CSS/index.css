@@ -329,9 +329,6 @@ main
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 0.55rem;
 }
 
 .heroActionBtn
@@ -668,6 +665,24 @@ body[data-theme="light"] .toggleSwitch input:checked + .slider
     box-shadow: var(--shadow);
 }
 
+.contactVisitBtn
+{
+    border: 1px solid var(--accent-soft);
+    background-color: transparent;
+    color: var(--accent);
+    border-radius: 0.45rem;
+    padding: 0.28rem 0.58rem;
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.contactVisitBtn:hover
+{
+    box-shadow: var(--shadow);
+}
+
 @media (max-width: 850px)
 {
     nav
@@ -791,6 +806,11 @@ body[data-theme="light"] .toggleSwitch input:checked + .slider
     }
 
     .copyMailBtn
+    {
+        margin-left: 2.7rem;
+    }
+
+    .contactVisitBtn
     {
         margin-left: 2.7rem;
     }

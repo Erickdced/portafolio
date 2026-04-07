@@ -63,8 +63,6 @@ const translations = {
 		heroQuote: "I don't wait to be taught — I build.",
 		heroSubtitle: "Engineering student by day. Self-taught builder since 3 years. Full stack, embedded systems, and cybersecurity — from Mexico City.",
 		cvDownloadBtn: "Download CV (PDF)",
-		githubVisitBtn: "Visit GitHub",
-		linkedinVisitBtn: "Visit LinkedIn",
 		cvDownloadFile: "Media/PDFs/CV_ErickCedillo_EN.pdf",
 		cvDownloadName: "CV_ErickCedillo_EN.pdf",
 		skillsLanguages: "Languages",
@@ -119,6 +117,7 @@ const translations = {
 		contactMail: "mail",
 		contactLinkedin: "linkedin",
 		contactGithub: "github",
+		contactVisit: "Visit",
 		contactCopy: "Copy",
 		contactCopied: "Copied"
 	},
@@ -135,8 +134,6 @@ const translations = {
 		heroQuote: "No espero a que me enseñen — construyo.",
 		heroSubtitle: "Estudiante de ingeniería de día. Constructor autodidacta desde hace 3 años. Full stack, sistemas embebidos y ciberseguridad — desde Ciudad de México.",
 		cvDownloadBtn: "Descargar CV (PDF)",
-		githubVisitBtn: "Visitar GitHub",
-		linkedinVisitBtn: "Visitar LinkedIn",
 		cvDownloadFile: "Media/PDFs/CV_ErickCedillo_ES.pdf",
 		cvDownloadName: "CV_ErickCedillo_ES.pdf",
 		skillsLanguages: "Lenguajes",
@@ -191,6 +188,7 @@ const translations = {
 		contactMail: "correo",
 		contactLinkedin: "linkedin",
 		contactGithub: "github",
+		contactVisit: "Visitar",
 		contactCopy: "Copiar",
 		contactCopied: "Copiado"
 	}
@@ -254,8 +252,6 @@ const elements = {
 	heroQuote: document.getElementById("heroQuote"),
 	heroSubtitle: document.getElementById("heroSubtitle"),
 	cvDownloadBtn: document.getElementById("cvDownloadBtn"),
-	githubVisitBtn: document.getElementById("githubVisitBtn"),
-	linkedinVisitBtn: document.getElementById("linkedinVisitBtn"),
 	languagesTitle: document.querySelector("#languages h2"),
 	languagesList: document.querySelector("#languages ul"),
 	embeddedTitle: document.querySelector("#embedded h2"),
@@ -312,6 +308,8 @@ const elements = {
 	mailText: document.getElementById("mailText"),
 	linkedinText: document.getElementById("linkedinText"),
 	githubText: document.getElementById("githubText"),
+	linkedinVisitBtn: document.getElementById("linkedinVisitBtn"),
+	githubVisitBtn: document.getElementById("githubVisitBtn"),
 	copyMailBtn: document.getElementById("copyMailBtn")
 };
 
@@ -544,8 +542,6 @@ function setLanguage(lang, options = {})
 	elements.heroQuote.textContent = copy.heroQuote;
 	elements.heroSubtitle.textContent = copy.heroSubtitle;
 	elements.cvDownloadBtn.textContent = copy.cvDownloadBtn;
-	elements.githubVisitBtn.textContent = copy.githubVisitBtn;
-	elements.linkedinVisitBtn.textContent = copy.linkedinVisitBtn;
 	elements.cvDownloadBtn.href = copy.cvDownloadFile;
 	elements.cvDownloadBtn.setAttribute("download", copy.cvDownloadName);
 	elements.project1ImageText.textContent = copy.project1ImageText;
@@ -598,6 +594,8 @@ function setLanguage(lang, options = {})
 	elements.mailText.textContent = copy.contactMail;
 	elements.linkedinText.textContent = copy.contactLinkedin;
 	elements.githubText.textContent = copy.contactGithub;
+	elements.linkedinVisitBtn.textContent = copy.contactVisit;
+	elements.githubVisitBtn.textContent = copy.contactVisit;
 	elements.copyMailBtn.textContent = copy.contactCopy;
 	if (elements.menuToggle)
 	{
